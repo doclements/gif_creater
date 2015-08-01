@@ -1,0 +1,3 @@
+[submodule "libgif-js"]
+	path = web_test/libgif-js
+	url = https://github.com/doclements/libgif-js.git
