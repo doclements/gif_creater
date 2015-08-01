@@ -1,0 +1,40 @@
+<html>
+<head>
+   <title>GIF controller</title>
+   <script type="text/javascript" src="/libgif-js/libgif.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.js"></script>
+</head>
+<body>
+<div id="controls">
+   <button onClick="gif1.play(my_callback); return false;">Start</button>
+   <button onClick="gif1.pause(); return false">Stop</button>
+   <button onClick="gif1.move_relative(1, my_callback); return false">-> single frame</button>
+   <button onClick="gif1.move_relative(-1, my_callback); return false"><- single frame</button>
+</div>
+<div id="img_holder">
+<img id="main_gif" src="/images/static_holder.png" rel:animated_src="/images/blah.gif"/>
+</div>
+
+</body>
+<script>
+var gif1 ;
+
+var my_callback;
+
+$.getJSON('/gif_info.json', function(data){
+
+gif1 = new SuperGif({gif: document.getElementById('main_gif'), auto_play:0, draw_while_loading:0});
+gif1.load(gif1.pause);
+console.log(data);
+
+my_callback = function(frame){
+   console.log(frame);
+   console.log(data.frames[frame]);
+}
+
+
+})
+
+//gif1.pause();
+</script>
+</html>

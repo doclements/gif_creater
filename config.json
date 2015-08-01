@@ -1,0 +1,9 @@
+{
+   "title": "A Sample Animated EO GIF",
+   "start_date": "2000-01-01T00:00:00.000Z",
+   "end_date": "2002-12-01T00:00:00.000Z",
+   "data_source": "https://rsg.pml.ac.uk/thredds/wms/CCI_ALL-v2.0-MONTHLY?",
+   "wms_layer": "chlor_a",
+   "geo_bounds": "-10, 45, 2, 75"
+
+}
